@@ -1,25 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
 
 <div data-role="page" id="pageone">
-  <div data-role="main" class="ui-content">
-    <h2>Choose your Drivers </h2>
+  <div data-role="main" class="ui-content"> 
+  	<div ng-init="drivers=[
+
+  	{name:"John", Status: Available, role:'student'},
+  	{name:"Sarah", Status: Available, role:'teacher'},
+  	{name:"John", Status: Available, role:'banker'},
+  	{name:"Heidi", Status: Available, role:'developer'},
+  	{name:"Svetlana", Status: Unavailable, role:'singer'},
 
 
-    <ul data-role="listview" data-inset="true">
-      <li><a href="#"><img src="img/smile.jpg "  alt="USA" >Driver 1</a></li>
-      <li><a href="#"><img src="img/smile.jpg" alt="Great Britain" >Driver 1</a></li>
-      <li><a href="#"><img src="img/smile.jpg" alt="Finland" >Driver 1</a></li>
-      <li><a href="#"><img src="img/smile.jpg" alt="Germany" >Driver 1</a></li>
-      <li><a href="#"><img src="img/smile.jpg" alt="France" >Driver 1</a></li>
+
+  	]">
+
+    <h1>Choose your Drivers </h1>
+    <h2>Available {{drivers.length}} drivers in your area. They are</h2>
+    <input type="search" ng-model="q" placeholder="filter drivers..." area-label="filter drivers"/>
+
+
+
+	   <ul class="example-animate-container" data-role="listview" data-inset="true">
+
+
+
+      <li class="animate-repeat" ng-repeat="drivers in drivers | filter:q as results">
+      	<a href="#"><img src="img/smile.jpg "  alt="Driver1" > [{{$index+1}}] {{drivers.name}} is {{drivers.Status}} in your area who is a {{drivers.role}}</a>
+      	      
+      </li>
+
+
+      <li class="animate-repeat" ng-if="results.length==0"><a href="#"><img src="img/smile.jpg" alt="Driver2" >Driver 1</a>	</li>
+      <strong> No results found... Sorry </strong>
+      <li><a href="#"><img src="img/smile.jpg" alt="Driver3" >Driver 1</a></li>
+      <li><a href="#"><img src="img/smile.jpg" alt="Driver4" >Driver 1</a></li>
+      <li><a href="#"><img src="img/smile.jpg" alt="Driver5" >Driver 1</a></li>
     </ul>
+</div>
   </div>
 </div> 
 
