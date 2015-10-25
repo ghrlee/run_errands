@@ -24,8 +24,8 @@
 	{	firstName: 'Jim',
 		lastName: 'Nelson' ,
 		status: 'available' ,
-		location: 'home' ,
-		isADA:	false,
+		location: '2 miles away' ,
+		isADA:	'yes',
 		isClient: false,
 		description:'I enjoy helping people'
 		
