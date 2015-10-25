@@ -1,28 +1,49 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="runErrands" class="no-js"> <!--<![endif]-->
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/app.css">
+  <link href="css/bootstrap.css">
+   <link href="css/bootstrap.min.css">
+   <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.7.min.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
 
-<div data-role="page" id="pageone">
+<div data-role="page" id="pageone" ng-controller="DriverController as d">
   <div data-role="main" class="ui-content">
   	<h1> We are here to help</h1>
     <h2>Choose your Drivers </h2>
 
 
-    <ul data-role="listview" data-inset="true">
-      <li><a href="elderlyprofile.html"><img src="img/smile.jpg "  alt="1" >Driver 1</a></li>
-      <li><a href="#"><img src="img/smile.jpg" alt="2" >Driver 2</a></li>
-      <li><a href="#"><img src="img/smile.jpg" alt="3" >Driver 3</a></li>
-      <li><a href="#"><img src="img/smile.jpg" alt="4" >Driver 4</a></li>
-      <li><a href="#"><img src="img/smile.jpg" alt="5" >Driver 5</a></li>
+    <ul data-role="listview" data-inset="true" ng-repeat="a in d.vols">
+      <li ng-show="!isClient"><a href="elderlyprofile.html"><img ng-src="{{a.images}}" >{{a.firstName}} {{a.lastName}}</a></li>
+      
     </ul>
   </div>
 </div> 
-
+<!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  <script src="js/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
 </body>
 </html>

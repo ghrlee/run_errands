@@ -10,8 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <link href="profile.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/app.css">
+  <link href="css/profile.css" rel="stylesheet" type="text/css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
       <title>Find directions</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -121,43 +121,25 @@
 	  .listentryblue{
 		    background-color:#3498db;
 	  }
-	  #floatimg {
-	/* [disabled]float: left; */
-	background-color: #3498db;
-}
-#myMap {
-	width: 100%;
-
-}
-
-
-
-@media screen{
-.pro {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 40px;
-}
 	  </style>
    </head>
-   <body onload="getMap();">
-   <div id="floatimg">
+   <body onload="getMap();" ng-controller="DriverController as c">
+   <div id="floatimg" >
    <br>
-   <img src="h2015/four_stars.png" alt="star_rating" class="pro" id="stars"/>
-   <img src="h2015/blankperson.png" alt="blue" class="pro"/>
+   <img src="img/four_stars.png" alt="star_rating" class="pro" id="stars"/>
+   <img src="img/blankperson.png" alt="blue" class="pro"/>
    
     
     <ul>
-    <li><label id="driver_name">Name:</label></li>
+    <li><label>Name: {{c.vols[0].firstName}} {{c.vols[0].lastName}}</label></li>
     <br>
-    <li><label id="driver_ada">ADA:</label></li>
+    <li><label>ADA:</label></li>
     <br>
-    <li><label id="driver_location">Location:</label></li>
+    <li><label>Location:</label></li>
     <br>
-    <li><label id="driver_about">About Me:</label></li>
-     <li class="listentryblue"><input type="image" class="imgbutton" alt="imgbutton" src="h2015/accept_button.png"></li>
-       <li class="listentryblue"><input type="image" class="imgbutton" alt="imgbutton" src="h2015/cancel_button.png"></li>
+    <li><label>About Me:{{c.vols[0].description}}</label></li>
+     <li class="listentryblue"><input type="image" class="imgbutton" alt="imgbutton" src="img/accept_button.png"></li>
+       <li class="listentryblue"><input type="image" class="imgbutton" alt="imgbutton" src="img/cancel_button.png"></li>
     </ul>
   
  

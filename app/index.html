@@ -9,25 +9,12 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <!-- Bootstrap core CSS -->
   <link href="css/app.css">
   <link href="css/bootstrap.css">
    <link href="css/bootstrap.min.css">
+   <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.7.min.js"></script>
 
-   <style>
-   .body{
-    padding-top:50px;
-
-   }
-
-   .starter-template{
-    padding: 40px 15px;
-    text-align:center;
-   }
-   </style>
+   
 
 
 
@@ -38,8 +25,15 @@
     <link href="app.css" rel="stylesheet">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
+
+<body ng-controller="DriverController as driver">
   
+  <div ng-repeat="a in driver.vols">
+     {{a.firstName}} {{a.lastName}}
+
+
+  </div>
+
         <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js'></script>
         <script src='http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js'></script>
         <script src='page.js'></script>
