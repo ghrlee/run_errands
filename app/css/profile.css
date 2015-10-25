@@ -1,0 +1,21 @@
+@charset "utf-8";
+#floatimg {
+	/* [disabled]float: left; */
+	background-color: #3498db;
+}
+#myMap {
+	width: 100%;
+
+}
+
+
+
+@media screen{
+.pro {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+}
+
+}
