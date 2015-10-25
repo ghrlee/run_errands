@@ -12,42 +12,44 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/app.css">
+  <link href="css/bootstrap.css">
+   <link href="css/bootstrap.min.css">
+
+   <style>
+   .body{
+    padding-top:50px;
+
+   }
+
+   .starter-template{
+    padding: 40px 15px;
+    text-align:center;
+   }
+   </style>
+
+
+
+    
+
+
+    <!-- Custom styles for this template -->
+    <link href="app.css" rel="stylesheet">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-  {{2+2}}
-
-  <div id='wrapper'>
-            <article>
-                <header>
-                    <h2>Microsoft Azure</h2>
-                    <h1>Mobile Services</h1>
-
-                    <form id='add-item'>
-                        <button type='submit'>Add</button>
-                        <div><input type='text' id='new-item-text' placeholder='Enter new task' /></div>
-                    </form>
-                </header>
-
-                <ul id='todo-items'></ul>
-                <p id='summary'>Loading...</p>
-            </article>
-
-            <footer>
-                <a href='http://www.windowsazure.com/en-us/develop/mobile/'>
-                    Learn more about Microsoft Azure Mobile Services
-                </a>
-                <ul id='errorlog'></ul>
-            </footer>
-        </div>
-
+  
         <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js'></script>
         <script src='http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js'></script>
         <script src='page.js'></script>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
+  --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
   <script src="js/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
@@ -56,5 +58,6 @@
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+ 
 </body>
 </html>
